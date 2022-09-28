@@ -1,0 +1,9 @@
+.headerStyle {
+  padding: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.headerStyle span {
+  color: brown;
+}

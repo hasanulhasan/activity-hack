@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Book Reading",
+    "time": 50,
+    "img": "./Images/reading-book.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Quran Reciting",
+    "time": 35,
+    "img": "./Images/reciting-quran.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Watching Movie",
+    "time": 55,
+    "img": "./Images/Movie-Theater.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Physical Exercise",
+    "time": 45,
+    "img": "./Images/exercise.jpg"
+  },
+  {
+    "id": 5,
+    "name": "English Practice",
+    "time": 30,
+    "img": "./Images/english-practice.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Facebook using",
+    "time": 20,
+    "img": "./Images/facebook.jpg"
+  }
+]

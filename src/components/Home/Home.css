@@ -1,0 +1,24 @@
+.HomeItems {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.activity-container {
+  background-color: rgba(128, 128, 128, 0.609);
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.info-container {
+  background-color: rgba(116, 116, 74, 0.392);
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .HomeItems {
+    display: flex;
+    flex-direction: column;
+  }
+}
