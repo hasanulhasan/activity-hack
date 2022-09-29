@@ -13,7 +13,7 @@ const Home = () => {
         <Activity countTime={countTime} setCountTime={setCountTime}></Activity>
       </div>
       <div className="info-container">
-        <h1>Informations</h1>
+        <h1>Information</h1>
         <div className='info'>
           <h3>Name: Md Hasanul Karim</h3>
           <h3>Location: Chittagong</h3>
@@ -30,7 +30,9 @@ const Home = () => {
         <h2 className='margin-top'>Details of Activity</h2>
         <div className='activity-details'>
 
-          <h3>Activity time: minutes</h3>
+          <h3>Activity time: {
+            countTime.reduce((prev, curr) => parseInt(prev) + parseInt(curr.time), 0)
+          }minutes</h3>
           <h3>Break time: 0 minutes</h3>
         </div>
         <button className='activity-btn'>Activity completed</button>
