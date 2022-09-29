@@ -12,7 +12,26 @@ const Home = () => {
 
       </div>
       <div className="info-container">
-        <h1>This is info</h1>
+        <h1>Informations</h1>
+        <div className='info'>
+          <h3>Name: Md Hasanul Karim</h3>
+          <h3>Location: Chittagong</h3>
+        </div>
+        <h2 className='margin-top'>Break in Activity</h2>
+        <div className="breaks">
+          <ol>
+            <li>5min</li>
+            <li>10min</li>
+            <li>15min</li>
+            <li>20min</li>
+          </ol>
+        </div>
+        <h2 className='margin-top'>Details of Activity</h2>
+        <div className='activity-details'>
+          <h3>Activity time: 0 minutes</h3>
+          <h3>Break time: 0 minutes</h3>
+        </div>
+        <button className='activity-btn'>Activity completed</button>
       </div>
     </div>
   );

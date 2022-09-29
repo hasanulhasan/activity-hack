@@ -13,23 +13,25 @@ const Activity = () => {
   return (
     <div className='activity'>
       {
-        activities.map(activity => <SingleActivity activity={activity}></SingleActivity>)
+        activities.map(activity => <SingleActivity activity={activity} key={activity.id}></SingleActivity>)
       }
     </div>
   );
 };
 
 const SingleActivity = (props) => {
-  const { name, time, img } = props.activity
-  const timeAdding = () => {
-    console.log('clicked')
+  const [countTime, setCountTime] = useState(0);
+  const { name, time, img, id } = props.activity;
+  const timeAdding = (time) => {
+    setCountTime(countTime + time);
+    console.log(countTime);
   }
   return (
     <div className='activityItem'>
       <img src={img}></img>
-      <h1>Name : {name}</h1>
-      <h1>Time taken : {time}</h1>
-      <button onClick={timeAdding}>Add to List</button>
+      <h2>Name : {name}</h2>
+      <h2>Time : {time} minutes</h2>
+      <button onClick={() => timeAdding(time)}>Add to List</button>
     </div>
   )
 }
