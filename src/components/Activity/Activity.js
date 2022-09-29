@@ -7,8 +7,17 @@ const Activity = ({ countTime, setCountTime, breakTime, setBreakTime }) => {
     fetch('activity.json')
       .then(res => res.json())
       .then(data => setActivities(data))
+    const old = JSON.parse(localStorage.getItem("break"));
+    if (old) {
+      setBreakTime(old);
+      return;
+    }
+    else {
+      setBreakTime(breakTime);
+      return;
+    }
 
-  }, [])
+  }, [setBreakTime])
 
   return (
     <div className='activity'>

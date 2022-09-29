@@ -15,10 +15,15 @@ const Question = () => {
       <div>
         <h2>Difference between props and state</h2>
         <h4> Props</h4>
-        <li>something</li>
-        <li>something</li>
-        <li>something</li>
-        <li>something</li>
+        <li>Props are used to pass data from one component to another.</li>
+        <li>Props are immutable and read only.</li>
+        <li>Props can be accessed by the child component.</li>
+        <li>Props make components reusable.</li>
+        <h4>State</h4>
+        <li>The state is a local data storage that is local to the component only and cannot be passed to other components.</li>
+        <li>State is mutable and asynchronous</li>
+        <li>State cannot be accessed by child components</li>
+        <li>State cannot make components reusable.</li>
       </div>
     </div>
   );

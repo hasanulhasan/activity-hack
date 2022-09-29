@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Activity from '../Activity/Activity';
 import Header from '../Header/Header';
+import Question from '../Question/Question';
 import './Home.css'
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <div className="activity-container">
         <Header></Header>
         <Activity countTime={countTime} setCountTime={setCountTime} breakTime={breakTime} setBreakTime={setBreakTime}></Activity>
+        <Question></Question>
       </div>
       <div className="info-container">
         <h1>Information</h1>
