@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Activity.css'
-const Activity = () => {
 
+const Activity = ({ countTime, setCountTime }) => {
   const [activities, setActivities] = useState([])
-
   useEffect(() => {
     fetch('activity.json')
       .then(res => res.json())
@@ -13,25 +12,34 @@ const Activity = () => {
   return (
     <div className='activity'>
       {
-        activities.map(activity => <SingleActivity activity={activity} key={activity.id}></SingleActivity>)
+        activities.map(activity => <SingleActivity activity={activity} key={activity.id} countTime={countTime} setCountTime={setCountTime}></SingleActivity>)
       }
     </div>
   );
 };
 
-const SingleActivity = (props) => {
-  const [countTime, setCountTime] = useState(0);
-  const { name, time, img, id } = props.activity;
-  const timeAdding = (time) => {
-    setCountTime(countTime + time);
-    console.log(countTime);
+const SingleActivity = ({ activity, countTime, setCountTime }) => {
+  const { name, time, img } = activity;
+  const handalCart = () => {
+    const info = {
+      name, time, img
+    }
+    if (countTime) {
+      setCountTime([...countTime, info]);
+      return;
+    }
+    else {
+      setCountTime([info])
+    }
+
   }
+
   return (
     <div className='activityItem'>
-      <img src={img}></img>
+      <img alt='..' src={img}></img>
       <h2>Name : {name}</h2>
       <h2>Time : {time} minutes</h2>
-      <button onClick={() => timeAdding(time)}>Add to List</button>
+      <button onClick={handalCart}>Add to List</button>
     </div>
   )
 }

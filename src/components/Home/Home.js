@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Activity from '../Activity/Activity';
 import Header from '../Header/Header';
 import './Home.css'
 
 const Home = () => {
+  const [countTime, setCountTime] = useState([]);
+  console.log(countTime)
   return (
     <div className='HomeItems'>
       <div className="activity-container">
         <Header></Header>
-        <Activity></Activity>
-
+        <Activity countTime={countTime} setCountTime={setCountTime}></Activity>
       </div>
       <div className="info-container">
         <h1>Informations</h1>
@@ -28,7 +29,8 @@ const Home = () => {
         </div>
         <h2 className='margin-top'>Details of Activity</h2>
         <div className='activity-details'>
-          <h3>Activity time: 0 minutes</h3>
+
+          <h3>Activity time: minutes</h3>
           <h3>Break time: 0 minutes</h3>
         </div>
         <button className='activity-btn'>Activity completed</button>
