@@ -5,12 +5,20 @@ import './Home.css'
 
 const Home = () => {
   const [countTime, setCountTime] = useState([]);
+  const [breakTime, setBreakTime] = useState("0");
   console.log(countTime)
+  const handalBreakTime = (e) => {
+    const getBreak = e.target.childNodes[0].innerText;
+
+    localStorage.setItem("break", JSON.stringify(getBreak))
+
+    setBreakTime(getBreak)
+  }
   return (
     <div className='HomeItems'>
       <div className="activity-container">
         <Header></Header>
-        <Activity countTime={countTime} setCountTime={setCountTime}></Activity>
+        <Activity countTime={countTime} setCountTime={setCountTime} breakTime={breakTime} setBreakTime={setBreakTime}></Activity>
       </div>
       <div className="info-container">
         <h1>Information</h1>
@@ -21,10 +29,10 @@ const Home = () => {
         <h2 className='margin-top'>Break in Activity</h2>
         <div className="breaks">
           <ol>
-            <li>5min</li>
-            <li>10min</li>
-            <li>15min</li>
-            <li>20min</li>
+            <li onClick={handalBreakTime}><span>5</span>min</li>
+            <li onClick={handalBreakTime}><span>10</span>min</li>
+            <li onClick={handalBreakTime}><span>15</span>min</li>
+            <li onClick={handalBreakTime}><span>20</span>min</li>
           </ol>
         </div>
         <h2 className='margin-top'>Details of Activity</h2>
@@ -33,7 +41,7 @@ const Home = () => {
           <h3>Activity time: {
             countTime.reduce((prev, curr) => parseInt(prev) + parseInt(curr.time), 0)
           }minutes</h3>
-          <h3>Break time: 0 minutes</h3>
+          <h3>Break time: {breakTime} minutes</h3>
         </div>
         <button className='activity-btn'>Activity completed</button>
       </div>

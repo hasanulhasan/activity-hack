@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Activity.css'
 
-const Activity = ({ countTime, setCountTime }) => {
+const Activity = ({ countTime, setCountTime, breakTime, setBreakTime }) => {
   const [activities, setActivities] = useState([])
   useEffect(() => {
     fetch('activity.json')
       .then(res => res.json())
       .then(data => setActivities(data))
+
   }, [])
 
   return (
