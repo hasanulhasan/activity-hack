@@ -27,6 +27,7 @@ const Home = () => {
         <div className='info'>
           <h3>Name: Md Hasanul Karim</h3>
           <h3>Location: Chittagong</h3>
+          <h3>Age: 25</h3>
         </div>
         <h2 className='margin-top'>Break in Activity</h2>
         <div className="breaks">

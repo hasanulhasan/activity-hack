@@ -10,6 +10,11 @@
   padding-right: 50px;
 }
 
+.info-container h1,
+h2 {
+  position: sticky;
+}
+
 .info-container {
   background-color: rgba(116, 116, 74, 0.392);
   padding-top: 20px;
