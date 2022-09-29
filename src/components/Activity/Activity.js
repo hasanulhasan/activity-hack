@@ -17,7 +17,7 @@ const Activity = ({ countTime, setCountTime, breakTime, setBreakTime }) => {
       return;
     }
 
-  }, [setBreakTime])
+  }, [])
 
   return (
     <div className='activity'>
